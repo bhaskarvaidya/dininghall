@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Devgiri Dining Hall</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+rel="stylesheet"
+href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div id="loader">
+
+    <div class="loader-content">
+
+        <div class="spinner"></div>
+
+        <h2>Devgiri Dining</h2>
+
+    </div>
+
+</div>
+
+    <!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        Devgiri Dining
+    </div>
+
+    <nav id="navMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+
+        <div class="cart-icon">
+            🛒
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span>
+        </div>
+
+        <i class="fas fa-moon" id="themeBtn"></i>
+
+        <i class="fas fa-bars" id="menuBtn"></i>
+
+    </div>
+
+</header>
+    <!-- HERO -->
+     
+
+    <section class="hero" id="home">
+
+    <video autoplay muted loop playsinline>
+
+        <source
+        src="videos/restaurant.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>Luxury Dining Experience</h1>
+
+        <p>
+            Taste the finest flavors crafted by expert chefs.
+        </p>
+
+        <button class="hero-btn">
+            Reserve Now
+        </button>
+
+    </div>
+
+
+    </section>
+    <section class="featured">
+
+    <h2>Chef's Specials</h2>
+
+    <div class="featured-container">
+
+        <div class="featured-card">
+            <img src="images/food1.jpg">
+            <h3>Truffle Pizza</h3>
+            <p>₹499</p>
+        </div>
+
+        <div class="featured-card">
+            <img src="images/food2.jpg">
+            <h3>Signature Burger</h3>
+            <p>₹399</p>
+        </div>
+
+        <div class="featured-card">
+            <img src="images/food3.jpg">
+            <h3>Italian Pasta</h3>
+            <p>₹449</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="about" class="about">
+
+    <div class="about-content">
+
+        <h2>Our Story</h2>
+
+        <p>
+            At Devgiri Dining, we combine traditional recipes with modern culinary excellence.
+            Our chefs use only the freshest ingredients to create unforgettable dining experiences.
+        </p>
+
+        <div class="about-features">
+
+            <div>
+                <i class="fas fa-utensils"></i>
+                <h3>Premium Quality</h3>
+            </div>
+
+            <div>
+                <i class="fas fa-award"></i>
+                <h3>Award Winning Chefs</h3>
+            </div>
+
+            <div>
+                <i class="fas fa-heart"></i>
+                <h3>Customer Favorite</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="chef">
+
+    <h2>Meet Our Master Chef</h2>
+
+    <img src="images/chef.jpg">
+
+    <h3>Chef Marco Rossi</h3>
+
+    <p>
+        15+ years experience in luxury dining and
+        international cuisine.
+    </p>
+
+</section>
+
+    #CATEGORY FILTER
+    <div class="filter-buttons">
+
+    <button data-filter="all">All</button>
+
+    <button data-filter="veg">Veg</button>
+
+    <button data-filter="nonveg">Non-Veg</button>
+
+    <button data-filter="dessert">Desserts</button>
+
+</div>
+
+    <!-- MENU -->
+
+    <section id="menu" class="menu">
+
+        <h2>Our Popular Dishes</h2>
+
+        <div class="menu-container">
+
+            <div class="card veg">
+
+    <img src="images/food1.jpg">
+
+    <h3>Paneer Pizza</h3>
+
+    <p>₹299</p>
+
+    <div class="card-buttons">
+
+        <button class="view-food">
+            View Details
+        </button>
+
+        <button class="add-cart">
+            Add To Cart
+        </button>
+
+    </div>
+
+</div>
+
+            <div class="card nonveg">
+
+    <img src="images/food2.jpg">
+
+    <h3>Chicken Burger</h3>
+
+    <p>₹249</p>
+
+    <div class="card-buttons">
+
+        <button class="view-food">
+            View Details
+        </button>
+
+        <button class="add-cart">
+            Add To Cart
+        </button>
+
+    </div>
+
+</div>
+
+            <div class="card dessert">
+            <img src="images/food3.jpg">
+
+                <h3>Chocolate Cake</h3>
+                <p>₹249</p>
+                 <div class="card-buttons">
+
+        <button class="view-food">
+            View Details
+        </button>
+
+        <button class="add-cart">
+            Add To Cart
+        </button>
+
+    </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Food..."
+    >
+
+</section>
+
+    <!-- GALLERY -->
+
+    <section id="gallery" class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="gallery-grid">
+
+            <img src="images/food1.jpg">
+            <img src="images/food2.jpg">
+            <img src="images/food3.jpg">
+
+        </div>
+    <section class="parallax">
+
+    <div class="parallax-content">
+
+        <h2>
+            Fine Dining Experience
+        </h2>
+
+    </div>
+
+</section>    
+
+
+    </section>
+    <section class="testimonials">
+
+    <h2>Customer Reviews</h2>
+
+    <div class="testimonial-slider">
+
+        <div class="slide active">
+            ★★★★★
+            Amazing food and service.
+        </div>
+
+        <div class="slide">
+            ★★★★★
+            Best restaurant in town.
+        </div>
+
+        <div class="slide">
+            ★★★★★
+            Loved the ambience.
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+        <p>Name: कुमार Anil Bhaiyya Sitare</p> 
+        <p>Email: info@devgiridininghall.com</p>
+        <p>Phone: +91 9623193047</p>
+        <iframe
+src="https://www.google.com/maps/embed?pb="
+width="100%"
+height="350"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+
+
+
+
+        
+
+    </section>
+    <!--Newsletter Section-->
+    <section class="newsletter">
+
+    <h2>
+        Subscribe For Special Offers
+    </h2>
+
+    <input
+    type="email"
+    placeholder="Enter Email">
+
+    <button>
+        Subscribe
+    </button>
+
+</section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+    <div class="footer-content">
+
+        <h2>Devgiri Dining</h2>
+
+        <p>
+            Premium Dining Experience
+        </p>
+
+        <div class="socials">
+
+            <i class="fab fa-facebook"></i>
+
+            <i class="fab fa-instagram"></i>
+
+            <i class="fab fa-youtube"></i>
+
+        </div>
+
+    </div>
+
+</footer>
+    <div class="modal" id="bookingModal">
+
+    <div class="modal-content">
+
+        <span id="closeModal">&times;</span>
+
+        <h2>Reserve Table</h2>
+
+        <input type="text" placeholder="Name">
+
+        <input type="tel" placeholder="Phone">
+
+        <input type="date">
+
+        <input type="time">
+
+        <button>Book Now</button>
+
+    </div>
+    <div class="food-modal">
+
+    <div class="food-modal-content">
+
+        <span class="close-food">&times;</span>
+
+        <img id="modalImage">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalPrice"></p>
+
+    </div>
+
+</div>
+
+</div>
+<a href="https://wa.me/919623193047" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button id="topBtn">▲</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="script.js"></script>
+
+<button id="topBtn">▲</button>
+</body>
+</html>
