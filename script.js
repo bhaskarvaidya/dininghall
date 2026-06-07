@@ -17,9 +17,10 @@ if (appThemeToggleButton) {
     };
 }
 // FOOD SEARCH
-
 const searchInput =
 document.getElementById("searchInput");
+
+if(searchInput){
 
 searchInput.addEventListener("keyup",()=>{
 
@@ -39,6 +40,7 @@ card.innerText.toLowerCase()
 });
 
 });
+}
 
 // CATEGORY FILTER
 
@@ -132,14 +134,13 @@ document.getElementById(
 // Use a unique variable name 'bookingModal' to prevent any 'already declared' syntax errors
 // === MODAL SECTION (CLEANED & FIXED) ===
 const bookingModal = document.getElementById("bookingModal");
-const bookBtn = document.querySelector(".book-btn");
+const heroBtn = document.querySelector(".hero-btn");
 
-if (bookBtn && bookingModal) {
-    bookBtn.onclick = () => {
+if (heroBtn && bookingModal) {
+    heroBtn.onclick = () => {
         bookingModal.style.display = "block";
     };
 }
-
 const closeModal = document.getElementById("closeModal");
 if (closeModal && bookingModal) {
     closeModal.onclick = () => {
@@ -230,4 +231,55 @@ if (topBtn) {
             behavior: "smooth"
         });
     };
+}
+
+
+
+
+
+// ================================================================
+// 🚀 PASTE THE NEW FIREBASE RESERVATION CODE HERE AT THE VERY BOTTOM:
+// ================================================================
+// ================================================================
+// 🚀 UPDATED ERROR-PROOF FIREBASE RESERVATION CODE
+// ================================================================
+const reservationForm = document.querySelector(".reservation-form");
+
+if (reservationForm) {
+  reservationForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Pull the Firestore utilities safely mapped to window in index.html
+    const { collection, addDoc } = window.firestoreUtils;
+    const db = window.db;
+
+    // Defensive check to avoid 'undefined' crashes if an input field name is slightly off in HTML
+    const getFormValue = (fieldName) => {
+      const element = reservationForm.elements[fieldName] || reservationForm.querySelector(`[name="${fieldName}"]`);
+      return element ? element.value : "";
+    };
+
+    // Safely collect form fields
+    const data = {
+      fullName: getFormValue("fullName"),
+      email: getFormValue("email"),
+      phone: getFormValue("phone"),
+      date: getFormValue("date"),
+      time: getFormValue("time"),
+      guests: getFormValue("guests") || "2 People",
+      specialRequest: getFormValue("specialRequest") || "None",
+      createdAt: new Date() // Sets the current submission timestamp
+    };
+
+    try {
+      // Direct insertion straight into your secure 'reservations' collection
+      await addDoc(collection(db, "reservations"), data);
+      
+      alert("🎉 Reservation Submitted Successfully!");
+      reservationForm.reset(); // Empties the form fields automatically
+    } catch (error) {
+      console.error("Firebase Error Details:", error);
+      alert("❌ Error Saving Reservation. Please try again.");
+    }
+  });
 }
